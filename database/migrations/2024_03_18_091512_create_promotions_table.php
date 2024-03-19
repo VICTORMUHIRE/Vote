@@ -11,15 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('superviseurs', function (Blueprint $table) {
-            
+        Schema::create('promotions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();           
-            $table->integer('matricule');              
-            $table->string('password');     
-            $table->string('faculte'); 
-            $table->rememberToken();
+            $table->string('nom');
+            $table->string('alias');
             $table->timestamps();
         });
     }
@@ -29,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('superviseurs');
+        Schema::dropIfExists('promotions');
     }
 };
