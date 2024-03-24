@@ -1,5 +1,5 @@
 @include('shared.base')
-@section('content')    
+@section('content')
 
         <div class="container1">
             <div class="containter-child">
@@ -8,56 +8,43 @@
                     <p>Ajouter Client</p></a>
                 </div>
                 <div class="Client">
-                <table class="table table-striped">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>N°</th>
-                            <th>Nom</th>
-                            <th>password</th>
-                            <th>solde</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id='tableBody'>
-                        
-                    </tbody>
-                </table>
-                
+
+
                 </div>
             </div>
         </div>
-    
+
 @endsection
 
-<div class="ajouter-client">     
+<div class="ajouter-client">
     <div class= "client-child">
-        <form action="../controllers/enregistrerClient.php" method="POST">                                 
+        <form action="../controllers/enregistrerClient.php" method="POST">
             <h2>Ajouter un Client</h2>
             <div>
                 <label for="">Nom</label>
                 <input class="input2" type="text" name="nom" required>
-                
+
             </div>
             <div>
                 <label for="">password</label>
                 <input class="input2" type="text" name="pasword" required>
-                
+
             </div>
             <div>
                 <label for="">Solde</label>
                 <input class="input2" type="number" name="solde" required>
-                
-            </div>                   
-            <button type="submit" value="Envoyer">Enregistrer</button>         
-        </form>  
-    </div>          
-</div> 
 
-<script>    
+            </div>
+            <button type="submit" value="Envoyer">Enregistrer</button>
+        </form>
+    </div>
+</div>
+
+<script>
     ajouter_lient = document.querySelector(".ajouter-client");
 
     function popUP(e) {
         ajouter_lient.classList.toggle("visible")
-        
+
     }
 </script>

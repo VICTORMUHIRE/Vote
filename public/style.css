@@ -12,16 +12,21 @@
     padding: o;
     box-sizing: border-box;
     font-family: "popin-lt";
+    color: #616161;
 }
 .body{
     width: 100%;
     height: 100vh;
-    
+
 }
-.container{
+.containerl{
     height: 100%;
     width: 100%;
-   
+
+}
+.container{
+    width: 90%;
+
 }
 .flex{
     display: flex;
@@ -42,7 +47,7 @@
 .div2{
     width: 60%;
     height: 100vh;
-    
+
 }
 .div1 div{
     width: 80%;
@@ -60,7 +65,7 @@
     align-items: flex-start;
 }
 .p-small{
-    color: #757575; 
+    color: #757575;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -87,7 +92,7 @@
     font-size: .95rem;
 }
 .inputs input{
-    padding: .7rem;
+    padding: .5rem;
     width: 25rem;
     border-radius: .5rem;
     border: 1px solid #D8D8D8;
@@ -123,17 +128,11 @@
     align-items: flex-start;
     gap: 10px;
 }
-.logo{
-    width: 2rem;
-    aspect-ratio: 1;
-    display: flex;    
-    align-items: center;
-    justify-content: center;
-}
+
 .logo svg,path{
     width: 1.5rem;
     aspect-ratio: 1;
-    fill: #0067FF;
+
 }
 
 .body1{
@@ -148,8 +147,8 @@
 }
 .header{
 width: 100%;
-display: flex;    
-gap: 73%;   
+display: flex;
+gap: 73%;
 border-bottom: solid 1px rgba(0, 0, 0, 0.05);
 /* box-shadow: 0px 2px 20px rgba(0,0,0,0.05); */
 
@@ -164,7 +163,7 @@ gap: 1rem;
 margin-left: 1.5rem;
 }
 .logo p{
-  width: 10rem;
+    margin: 0;
 }
 .logoImg{
 width:48px ;
@@ -173,7 +172,7 @@ height: 20px;
 .logoImg img{
 width:48px ;
 height: 20px;
-object-fit: contain; 
+object-fit: contain;
 }
 .adminInfo{
 display: flex;
@@ -238,7 +237,6 @@ flex-direction: column;
 gap: .4rem;
 margin-top: 1rem;
 }
-
 .menus a{
 display: flex;
 align-items: center;
@@ -248,16 +246,16 @@ padding: .6rem;
 border-radius: .5rem;
 }
 .menus a:hover{
-  background-color: #0067FF; 
-  color: white;
-  
+  background-color: #0067FF;
+
     .icon path{
     stroke: white;
     }
-    .dashboadIcon path{
-      fill: white;
-      
+    .menu-text{
+      color: white;
+
       }
+
 }
 .path{
     fill: none;
@@ -273,100 +271,71 @@ fill: #757575;
 stroke: #757575;
 }
 .container1{
-width: 80%;
-height: 89,9vh;
-background-color: #F7F7FB;
-display: flex;
-align-items: flex-end;
-justify-content: flex-end;
+    width: 80%;
+    height: 89,9vh;
+    background-color: #F7F7FB;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
 }
 .containter-child{
-    width: 97%;
+    width: 100%;
     height: 95%;
     border-radius: .3rem;
     justify-content: center;
     background-color: white;
     box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.02);
+    padding: 1rem 2rem;
+    margin-top: 5rem;
+    margin-left: 2rem;
 }
 
-
-.ajouter a{
-    margin: 2rem 0 0 2rem;
-    border: solid 1px #179DE3;
-    border-radius: .5rem;
-    color: black;
-    display: flex;
-    justify-content: center;
-    padding: 0 .4rem;
-}
-.ajouter{
-    font-size: .1rem;
-    margin-bottom: 2rem;
-    width: 12rem;
-}
-#plus,.pat{
-    width: 1rem;
-    fill: black;
-}
-.ajouter p{
-    padding: .4rem;
-    font-size: 1rem;
-}
-.ajouter p:hover{
-  color: white;
-}
-.ajouter a:hover{
-    background-color: #179DE3;
-    color: white;
-    border: none;
-}
-.ajouter a:hover .pat{
-    fill: white;
+.add:hover .addsvg rect{
+    fill: #0a58ca;
 }
 
-table {
-    width: 95%;
-    margin-left: 2.5%;
-
+.table1 {
+    margin-top: 1rem;
+    width: 100%;
     border-collapse: collapse;
   }
-  
-  thead th {
-    
+
+  .thead1 th {
+
     background-color: #f1f1f1;
     text-align: center;
-    padding: 8px;
+    padding: 5px;
   }
-  
-  tbody td {
+
+  .tbody1 td {
     text-align: center;
-    padding: 8px;
-    margin:1rem;
+    padding: 5px;
+    margin:.5rem;
   }
-  table tr{
-    margin: 1rem 0;
+  .table1 tr{
+    margin: .5rem 0;
   }
-  tbody tr:nth-child(even) {
+  .tbody1 tr:nth-child(even) {
     background-color: #f9f9f9;
-    margin:1rem;
+    margin:.5rem;
   }
-  
-  tbody tr:hover {
+
+  .tbody1 tr:hover {
     background-color: #e9e9e9;
   }
-  
-  table img {
-    max-width: 100px;
-    border-radius: 5px;
+
+  .table1 button ,.table1 a {
+    font-size: .9rem;
   }
-  
+
   a{
     text-decoration: none;
   }
- 
+
 
 .container-child form{
-    display: flex;    
+    display: flex;
     width: 100%;
     justify-content: center;
 }
@@ -377,24 +346,7 @@ table {
     height: 5rem;
     position: relative;
   }
-
-  .visible button,.montant button{
-    padding: .7rem;
-    font-size: .8rem;
-    border: none;
-    border-radius: .3rem;
-    background-color: #179DE3;
-    margin-top: .8rem;
-    color: white;
-    cursor: pointer;
-  }
-  textarea{
-    height: 100px;
-    padding: 5px;
-    border-radius: .25rem;
-    border: solid 1px #616161;    
-
-  }
+  
   .contact{
     display: flex;
     margin-left: 2rem;
@@ -413,8 +365,8 @@ table {
     gap: .8rem;
     margin-top: 2rem;
   }
-  
- 
+
+
   .links{
     display: flex;
     width: 100%;
@@ -433,8 +385,8 @@ table {
       justify-content: center;
       align-items: center;
     }
-    .index-conterainer{  
-      border: solid 1px rgba(0, 0, 0,0.1);    
+    .index-conterainer{
+      border: solid 1px rgba(0, 0, 0,0.1);
       padding: 3rem 2rem;
       display: flex;
       flex-direction: column;
@@ -467,10 +419,12 @@ table {
       display: none;
     }
     .visible{
-      position: fixed;
+      position: absolute;left: 0;top: 0;
+      display: block;
       height: 100vh;
       width: 100%;
-      background-color: rgba(0, 0, 0,.5);
+      background-color: rgb(17, 17, 17,0.4);
+      backdrop-filter: blur(.2rem);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -478,10 +432,10 @@ table {
     .visible .client-child{
       padding: 2rem;
       background-color: white;
-      border: solid 1px rgba(0, 0, 0,0.5);
+      border: solid 1px rgba(0, 0, 0,0.3);
       border-radius: .8rem;
 
-      
+
     }
     .visible .input2,.montant .input2{
       width: 20rem;
@@ -508,7 +462,7 @@ table {
     .col{
       flex-direction: column;
     }
-  
+
 .montant p{
   padding: 1rem;
   margin: 1rem;
@@ -521,14 +475,4 @@ h5{
   font-size: 1rem;
   margin-top: .5rem;
 }
-#supprimer{
-  padding: .7rem;
-  font-size: .8rem;
- 
-  border-radius: .3rem;
-  background-color: #179DE3;
-  margin-top: .8rem;
-  color: white;
-  cursor: pointer;
-  
-}
+

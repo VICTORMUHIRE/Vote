@@ -4,27 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('style.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>login</title>
 </head>
 <body class="body">
-    <div class="container flex">
+    <div class="containerl flex">
         <div class="div1 flex">
             <div>
-                
+
             </div>
         </div>
-        
+
         <div class="div2 flex">
             <form action="{{route('login')}}" method="post">
                 @csrf
                 <div class="containe flex">
                     <p class="p-small">Welcome back! 👋</p>
                     <p class="p-large">Login to your account</p>
-                    
+
                         @include('shared.input',['label'=>'Email','name'=>'email','type'=>'email','value'=>''])
-                        @include('shared.input',['label'=>'Mot de passe','name'=>'password','value'=>''])
+                        @include('shared.input',['label'=>'password','name'=>'password','value'=>''])
                         <button type="submit" name="submit">login</button>
-                    
+
                     <div class="or">
                         <hr class="line">
                         <p>or</p>
@@ -41,7 +42,7 @@
                 </div>
             </form>
         </div>
-        
+
     </div>
 </body>
 </html>
