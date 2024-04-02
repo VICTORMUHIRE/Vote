@@ -23,4 +23,5 @@ Route::delete('/logout',[AuthController::class, 'logout'])->name('logout');
 Route::prefix('admin')-> name('admin.')->middleware('auth')->group(function(){
     Route::get('/dashboad',[DashboadController::class,'index'])->name('dashboad');
     Route::resource('faculte', \App\Http\Controllers\Admin\FacultyController::class)->except(['show']);
+    Route::resource('promotion', \App\Http\Controllers\Admin\PromotionController::class)->except(['show']);
 });

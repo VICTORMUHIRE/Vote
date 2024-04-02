@@ -25,7 +25,7 @@
                 </svg>
             </div>
 
-            <div class="adminName"><span>John</span></div>
+            <div class="adminName"><span>{{Auth::user()->name}}</span></div>
             <div class="adminImage">
                 <img src="/static/admin.png" alt="">
             </div>
@@ -48,33 +48,36 @@
                     </div>
                 @endif
                 <div class="add d-flex justify-content-between align-items-center mt-2">
-                    <h4>Tous les facultes</h4>
-                    <a class="btn btn-primary d-flex align-items-center gap-2" href="{{route("admin.faculte.create")}}">
+                    <h4>Tous les superviseurs</h4>
+                    <a class="btn btn-primary d-flex align-items-center gap-2" href="{{route("admin.superviseur.create")}}">
                         <svg class="addsvg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="24" height="24" fill="#0067FF"/>
                             <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="1.5"/>
                             <path d="M15 12H12M12 12H9M12 12V9M12 12V15" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
                         </svg>
-                        <div @style("color:white")>Nouvelle faculte</div>
+                        <div @style("color:white")>Nouveau superviseur</div>
                     </a>
                 </div>
                 <table class="table1">
                     <thead class="thead1">
                         <tr>
                             <th class="d-flex justify-content-start">Nom</th>
-                            <th>Surnom</th>
+                            <th>Matricule</th>
+                            <th>email</th>
+                            <th>Faculte</th>
                             <th class="text-end">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="tbody1">
-                        @foreach ($facultes as $fac)
+                        @foreach ($superviseurs as $sup)
                             <tr>
-                                <td class="d-flex justify-content-start"  >{{$fac->name}}</td>
-                                <td>{{$fac->alias}}</td>
+                                <td class="d-flex justify-content-start"  >{{$sup->name}}</td>
+                                <td>{{$sup->alias}}</td>
+                                <td>{{$sup->faculte->alias}}</td>
                                 <td>
                                     <div class="d-flex gap-2 w-100 justify-content-end">
-                                        <a onclick="popUP()" href="{{route('admin.faculte.edit',$fac)}}" class="btn btn-primary">Editer</a>
-                                        <form method="POST" action="{{route('admin.faculte.destroy', $fac)}}">
+                                        <a onclick="popUP()" href="{{route('admin.superviseur.edit',$sup)}}" class="btn btn-primary">Editer</a>
+                                        <form method="POST" action="{{route('admin.superviseur.destroy', $sup)}}">
                                             @csrf
                                             @method('delete')
                                             <button class="btn btn-danger">Supprimer</button>
@@ -85,7 +88,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {{$facultes->links()}}
+                {{$superviseurs->links()}}
             </div>
         </div>
     </div>

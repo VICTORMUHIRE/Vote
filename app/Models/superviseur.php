@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Superviseur extends Model
 {
     use HasFactory;
+    protected $fillable = [
+            "name",
+            "matricule",
+            "email",
+            "password"
+        ] ;
+        public function faculte(){
+            return $this->belongsTo(Faculte::class);
+        }
 }
