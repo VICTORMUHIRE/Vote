@@ -14,7 +14,7 @@ class PromotionController extends Controller
     public function index()
     {
         return view('admin.promotion.index', [
-            'promotions' => Promotion::with("faculte")->orderBy('created_at','desc')->paginate(25)
+            'promotions' => Promotion::with("faculte")->orderBy('created_at','desc')->paginate(10)
         ]);
     }
 

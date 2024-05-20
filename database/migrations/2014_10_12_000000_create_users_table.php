@@ -15,11 +15,18 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();                      
-            $table->string('password');         
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->string('role');
+
+            $table->string('photo')->nullable();
+            $table->integer('Nombre_voix')->nullable();
+            $table->boolean('Etat_candidature')->nullable();
+            $table->text('description')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
+        
     }
 
     /**

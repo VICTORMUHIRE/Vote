@@ -22,10 +22,8 @@ class SuperviseurFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name"=>["required","string",'min:2'],
-            "matricule"=>["required","integer",'min:16000'],
-            "email"=>["required","email","unique:superviseurs",'min:8'],
-            "password"=>["required","string","password"],
+            'name'=>['required','min:2'],
+            'email'=>['required','email'],
             'faculte_id'=>['required','integer']
         ];
     }

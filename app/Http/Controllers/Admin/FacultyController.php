@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\FacultyFormRequest;
 use App\Models\Faculte;
-use Illuminate\Http\Request;
 
 class FacultyController extends Controller
 {

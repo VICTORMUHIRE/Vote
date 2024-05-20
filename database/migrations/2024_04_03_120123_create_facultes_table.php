@@ -1,9 +1,9 @@
 <?php
 
+use App\Models\Faculte;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Faculte;
 
 return new class extends Migration
 {
@@ -14,16 +14,19 @@ return new class extends Migration
     {
         Schema::create('facultes', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
+            $table->string('name');
             $table->string('alias');
             $table->timestamps();
-        
         });
-        Schema::table('superviseurs',function(Blueprint $table){
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreignIdFor(Faculte::class)->nullable()->constrained()->restrictOnDelete();
+        });
+        Schema::table('Promotions', function (Blueprint $table) {
             $table->foreignIdFor(Faculte::class)->constrained()->restrictOnDelete();
         });
-        Schema::table('promotions',function(Blueprint $table){
-            $table->foreignIdFor(Faculte::class)->constrained()->restrictOnDelete();
+        Schema::table('elections', function (Blueprint $table) {
+            $table->foreignIdFor(Faculte::class)->nullable()->constrained()->restrictOnDelete();
         });
     }
 

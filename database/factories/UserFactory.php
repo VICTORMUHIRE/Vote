@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
+use App\Models\Promotion;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
@@ -17,12 +17,16 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $name = fake()->name();
+        $password = strtolower(substr($name, 0, 3)) . rand(10000, 99999); // Mot de passe personnalisé
+        $promotion = Promotion::inRandomOrder()->first();
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'remember_token' => Str::random(10),
+            'name' => $name,
+            'email' => fake()->unique()->safeEmail,
+            'role'=> 'etudiant',
+            'password' => bcrypt($password),
+            'promotion_id' => $promotion->id, // Liaison aléatoire à une promotion
+            'faculte_id' => $promotion->faculte->id,
         ];
     }
 

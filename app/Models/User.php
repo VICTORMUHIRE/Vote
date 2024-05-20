@@ -17,15 +17,21 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
     protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'matricule',
-        'image',
-        'nbre_voix',
-        'role'
-    ];
+        "name",
+        "password",
+        "email",
+        "role",
+        "photo",
+        "description",
+        "nbre_voix",
+        "etat_candidature",
+        "Election_id",
+        "faculte_id",
+        "election_id",
+    ] ;
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -45,4 +51,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function voters()
+    {
+        return $this->belongsToMany(User::class, 'votes', 'candidate_id', 'voter_id');
+    }
+
+    public function candidates()
+    {
+        return $this->belongsToMany(User::class, 'votes', 'voter_id', 'candidate_id');
+    }
+    public function election()
+    {
+        return $this->belongsTo(Election::class, 'election_id', 'id'); // Replace with appropriate relationship details
+    }
 }
